@@ -1,0 +1,7 @@
+-
+  name: 'index'
+  uriPattern: ''
+  defaults:
+    '@package': MaxS.Blog
+    '@controller': 'Standard'
+    '@action': 'index'
