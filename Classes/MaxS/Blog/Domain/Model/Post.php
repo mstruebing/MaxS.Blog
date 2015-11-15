@@ -67,7 +67,7 @@ class Post {
 	 */
 	public function setBlog($blog) {
 		$this->blog = $blog;
-		$this->blog->addPost($his);
+		$this->blog->addPost($this);
 	}
 
 	/**

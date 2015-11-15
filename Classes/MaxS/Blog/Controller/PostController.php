@@ -19,10 +19,29 @@ class PostController extends ActionController {
 	protected $postRepository;
 
 	/**
-	 * @return void
+	 * @Flow\Inject
+	 * @var MaxS\Blog\Domain\Repository\BlogRepository
+	 */
+	protected $blogRepository;
+
+	/**
+	 * Index action
+	 *
+	 * @return string HTML code
 	 */
 	public function indexAction() {
-		$this->view->assign('posts', $this->postRepository->findAll());
+		$blog = $this->blogRepository->findActive();
+		$output = '
+							<h1>Posts of "' . $blog->getTitle() . '"</h1>
+							<ol>';
+
+		foreach ($blog->getPosts() as $post) {
+			$output .= '<li>'.$post->getTitle() . '</li>';
+		}
+
+		$output .= '</ol>';
+
+		return $output;
 	}
 
 	/**
