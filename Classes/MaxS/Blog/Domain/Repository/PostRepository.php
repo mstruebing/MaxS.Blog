@@ -1,5 +1,5 @@
 <?php
-namespace MaxS\Blog\Controller;
+namespace MaxS\Blog\Domain\Repository;
 
 /*                                                                        *
  * This script belongs to the TYPO3 Flow package "MaxS.Blog".             *
@@ -7,16 +7,13 @@ namespace MaxS\Blog\Controller;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Persistence\Repository;
 
-class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
+/**
+ * @Flow\Scope("singleton")
+ */
+class PostRepository extends Repository {
 
-	/**
-	 * @return void
-	 */
-	public function indexAction() {
-		$this->view->assign('foos', array(
-			'bar', 'baz'
-		));
-	}
+	// add customized methods here
 
 }
