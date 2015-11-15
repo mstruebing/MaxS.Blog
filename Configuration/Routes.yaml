@@ -3,5 +3,5 @@
   uriPattern: ''
   defaults:
     '@package': MaxS.Blog
-    '@controller': 'Standard'
+    '@controller': 'Post'
     '@action': 'index'
